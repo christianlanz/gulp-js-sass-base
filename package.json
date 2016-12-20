@@ -1,0 +1,23 @@
+{
+  "name": "omnifood",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Christian Lanz <christian.l4nz@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-clean-css": "^2.3.2",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-minify": "0.0.14",
+    "gulp-sass": "^3.0.0",
+    "gulp-uglify": "^2.0.0",
+    "run-sequence": "^1.2.2"
+  }
+}
