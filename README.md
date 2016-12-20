@@ -1,4 +1,4 @@
-# bootstrap-sass-base
+# gulp-js-sass-base
 
 ### Download required dependencies
 
@@ -20,20 +20,13 @@ Install Gulp.js:
 npm install -g gulp-cli
 ```
 
-Install Bower:
-
-```sh
-$ npm install -g bower
-```
-
 ### Initialize project
 
 Fetch Node and Bower packages:
 
 ```sh
-$ cd bootstrap-sass-base
+$ cd gulp-js-sass-base
 $ npm install
-$ gulp bower
 ```
 
 ### Usage
