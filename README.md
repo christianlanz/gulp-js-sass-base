@@ -29,10 +29,18 @@ $ cd gulp-js-sass-base
 $ npm install
 ```
 
-### Usage
+### Development
 
 Run the default task:
 
 ```sh
 $ gulp
+```
+
+### Production
+
+Build the project for deployment:
+
+```sh
+$ gulp production
 ```
