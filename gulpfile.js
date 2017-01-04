@@ -7,6 +7,7 @@ var uglify = require('gulp-uglify');
 var imagemin = require('gulp-imagemin');
 var runSequence = require('run-sequence');
 var del = require('del');
+var notify = require('gulp-notify');
 
 
 /* ----- Generic ----- */
@@ -21,7 +22,9 @@ gulp.task('clean', function() {
 
 gulp.task('sass', function() {
   return gulp.src('./assets/scss/**/*.scss')
-    .pipe(sass())
+    .pipe(sass().on('error', notify.onError(function(error) {
+      return "Failed to compile: " + error.message;
+    })))
     .pipe(autoprefixer({
       browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
     }))
