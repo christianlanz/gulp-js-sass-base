@@ -23,7 +23,7 @@ gulp.task('clean', function() {
 gulp.task('sass', function() {
   return gulp.src('./assets/scss/**/*.scss')
     .pipe(sass().on('error', notify.onError(function(error) {
-      return "Failed to compile: " + error.message;
+      return error.message;
     })))
     .pipe(autoprefixer({
       browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
@@ -48,37 +48,45 @@ gulp.task('html', function() {
   return gulp.src('./*.html')
     .pipe(htmlmin({
       collapseWhitespace: true
-    }))
+    }).on('error', notify.onError(function(error) {
+      return error.message;
+    })))
     .pipe(gulp.dest('./out'));
 });
 
 gulp.task('css', function() {
-  return gulp.src('./assets/css/*')
+  return gulp.src('./assets/css/*.css')
     .pipe(cleancss({
       keepSpecialComments: 0
-    }))
+    }).on('error', notify.onError(function(error) {
+      return error.message;
+    })))
     .pipe(gulp.dest('./out/assets/css'));
 });
 
 gulp.task('fonts', function() {
-  return gulp.src('./assets/fonts/*')
+  return gulp.src('./assets/fonts/**/*')
     .pipe(gulp.dest('./out/assets/fonts'));
 });
 
 gulp.task('js', function() {
   return gulp.src('./assets/js/**/*.js')
-    .pipe(uglify())
+    .pipe(uglify().on('error', notify.onError(function(error) {
+      return error.message;
+    })))
     .pipe(gulp.dest('./out/assets/js'));
 });
 
 gulp.task('images', function() {
-  return gulp.src('./assets/images/*')
-    .pipe(imagemin())
+  return gulp.src('./assets/images/**/*')
+    .pipe(imagemin().on('error', notify.onError(function(error) {
+      return error.message;
+    })))
     .pipe(gulp.dest('./out/assets/images'));
 });
 
 gulp.task('favicons', function() {
-  return gulp.src('./assets/favicons/*')
+  return gulp.src('./assets/favicons/**/*')
     .pipe(gulp.dest('./out/assets/favicons'));
 });
 
