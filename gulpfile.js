@@ -47,7 +47,8 @@ gulp.task('default', ['sass', 'sass:watch']);
 gulp.task('html', function() {
   return gulp.src('./*.html')
     .pipe(htmlmin({
-      collapseWhitespace: true
+      collapseWhitespace: true,
+      removeComments: true
     }).on('error', notify.onError(function(error) {
       return error.message;
     })))
