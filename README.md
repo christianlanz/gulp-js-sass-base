@@ -22,7 +22,7 @@ npm install -g gulp-cli
 
 ### Initialize project
 
-Fetch Node and Bower packages:
+Fetch Node packages:
 
 ```sh
 $ cd gulp-js-sass-base
