@@ -91,12 +91,12 @@ gulp.task('favicons', function() {
     .pipe(gulp.dest('./out/assets/favicons'));
 });
 
-gulp.task('other', function() {
-  return gulp.src('./assets/other/**/*')
-    .pipe(gulp.dest('./out/assets/other'));
+gulp.task('files', function() {
+  return gulp.src('./assets/files/**/*')
+    .pipe(gulp.dest('./out/assets/files'));
 });
 
-gulp.task('production', ['html', 'fonts', 'js', 'images', 'favicons', 'other'], function() {
+gulp.task('production', ['html', 'fonts', 'js', 'images', 'favicons', 'files'], function() {
   // TODO: Replaced with gulp.series when updating to gulp v4.0
   // Run sass and css task after one another
   runSequence('sass', 'css');
