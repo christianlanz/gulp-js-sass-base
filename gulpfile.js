@@ -42,7 +42,7 @@ gulp.task('sass:watch', function() {
 gulp.task('default', ['sass', 'sass:watch']);
 
 
-/* ----- Production ----- */
+/* ----- Deployment ----- */
 
 gulp.task('html', function() {
   return gulp.src('./*.html')
@@ -96,7 +96,7 @@ gulp.task('files', function() {
     .pipe(gulp.dest('./out/assets/files'));
 });
 
-gulp.task('production', ['html', 'fonts', 'js', 'images', 'favicons', 'files'], function() {
+gulp.task('dist', ['html', 'fonts', 'js', 'images', 'favicons', 'files'], function() {
   // TODO: Replaced with gulp.series when updating to gulp v4.0
   // Run sass and css task after one another
   runSequence('sass', 'css');
