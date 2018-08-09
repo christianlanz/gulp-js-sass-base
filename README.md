@@ -42,5 +42,5 @@ $ gulp
 Build the project for deployment:
 
 ```sh
-$ gulp production
+$ gulp dist
 ```
