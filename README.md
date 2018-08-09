@@ -37,7 +37,7 @@ Run the default task:
 $ gulp
 ```
 
-### Production
+### Deployment
 
 Build the project for deployment:
 
